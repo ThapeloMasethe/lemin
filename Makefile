@@ -6,13 +6,13 @@
 #    By: tmasethe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/26 11:56:18 by tmasethe          #+#    #+#              #
-#    Updated: 2018/09/12 16:49:29 by tmasethe         ###   ########.fr        #
+#    Updated: 2018/09/13 12:59:55 by tmasethe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	lem-in
 
-FILES			=	lem-in.c get_rooms.c
+FILES			=	lem-in.c get_rooms.c check.c
 
 OBJ 			=	$(FILES:.c=.o)
 

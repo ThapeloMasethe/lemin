@@ -6,7 +6,7 @@
 /*   By: tmasethe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 10:01:59 by tmasethe          #+#    #+#             */
-/*   Updated: 2018/09/12 16:54:43 by tmasethe         ###   ########.fr       */
+/*   Updated: 2018/09/13 13:01:40 by tmasethe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ int		main(int argc, char **argv)
 	//char	*start;
 	t_lemin lemin;
 	//int		end;
-	char	*line;
+	//char	*line;
 
 	if (argc == 1)
 		fd = 0;
@@ -28,10 +28,16 @@ int		main(int argc, char **argv)
 		fd = open(argv[1], O_RDONLY);
 	else
 		return (2);
-	get_next_line(fd, &line);
-	lemin.ants = ft_atoi(line);
-	ft_strdel(&line);
-	get_edges(&lemin, fd);
-	ft_putendl(lemin.start.name);
-	ft_putendl(lemin.end.name);
+	//get_next_line(fd, &line);
+	if (!check_ants(&lemin, fd))
+	{
+		ft_putendl("ERROR");
+		return (0);
+	}
+	// //lemin.ants = ft_atoi(line);
+	// ft_strdel(&line);
+	// get_edges(&lemin, fd);
+	// ft_putendl(lemin.start.name);
+	// ft_putendl(lemin.end.name);
+	return (0);
 }

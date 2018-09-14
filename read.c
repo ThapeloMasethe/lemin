@@ -1,35 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   read.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmasethe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/07 10:09:20 by tmasethe          #+#    #+#             */
-/*   Updated: 2018/09/13 12:59:32 by tmasethe         ###   ########.fr       */
+/*   Created: 2018/09/13 13:56:01 by tmasethe          #+#    #+#             */
+/*   Updated: 2018/09/13 14:04:10 by tmasethe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEMIN_H
-#define LEMIN_H
+#include "lem-in.h"
 
-# include <fcntl.h>
-
-typedef struct	s_room
+int		read_farm(t_lemin *lemin, int fd);
 {
-	char		*name;
-	char		**links;
-}				t_room;
+	char *line;
 
-typedef	struct	s_lemin
-{
-	int			ants;
-	t_room		start;
-	t_room		end;
-	t_room		rooms;
-}				t_lemin;
-
-void	get_edges(t_lemin *get, int fd);
-int		check_ants(t_lemin *check, int fd);
-#include "libft/libft.h"
-#endif
+	get_next_line(fd, &line);
+	if (!check_ants(&lemin, line))
+		return (0);
+	else if (check_line(&lemin, line))
+		ft_putendl(line);
+}
