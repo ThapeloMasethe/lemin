@@ -6,7 +6,7 @@
 /*   By: tmasethe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 10:09:20 by tmasethe          #+#    #+#             */
-/*   Updated: 2018/09/13 12:59:32 by tmasethe         ###   ########.fr       */
+/*   Updated: 2018/09/17 10:56:27 by tmasethe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ typedef	struct	s_lemin
 	t_room		rooms;
 }				t_lemin;
 
-void	get_edges(t_lemin *get, int fd);
+int		get_edges(t_lemin *get, int fd);
 int		check_ants(t_lemin *check, int fd);
 #include "libft/libft.h"
 #endif

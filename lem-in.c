@@ -6,7 +6,7 @@
 /*   By: tmasethe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/07 10:01:59 by tmasethe          #+#    #+#             */
-/*   Updated: 2018/09/13 13:01:40 by tmasethe         ###   ########.fr       */
+/*   Updated: 2018/09/17 10:41:52 by tmasethe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int		main(int argc, char **argv)
 	else
 		return (2);
 	//get_next_line(fd, &line);
-	if (!check_ants(&lemin, fd))
+	if (!check_ants(&lemin, fd) || !get_edges(&lemin, fd))
 	{
 		ft_putendl("ERROR");
 		return (0);
