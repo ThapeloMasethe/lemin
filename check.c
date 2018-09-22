@@ -6,7 +6,7 @@
 /*   By: tmasethe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/09/13 12:33:58 by tmasethe          #+#    #+#             */
-/*   Updated: 2018/09/17 11:05:11 by tmasethe         ###   ########.fr       */
+/*   Updated: 2018/09/21 14:51:00 by tmasethe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,6 +60,24 @@ int		check_ants(t_lemin *check, int fd)
 	return (1);
 }
 
+void	get_links(t_lemin *get, char *line)
+{
+	size_t i;
+	int islink;
+
+	i = 0;
+	islink = 0;
+	get->rooms.links = (char **)malloc(sizeof(char *) * 4096);
+	get->rooms.links[0] = (char *)malloc(sizeof(char) * ft_strlen(line));
+	//get->rooms.links[0] = ft_strdup(line);
+	while (line[i])
+	{
+		if (line[i] == '-')
+			get->rooms.links[0] = ft_strdup(line);
+		i++;
+	}
+}
+
 int		get_edges(t_lemin *get, int fd)
 {
 	char **temp;
@@ -88,7 +106,12 @@ int		get_edges(t_lemin *get, int fd)
 			ft_strdel(temp);
 		}
 		else
+		{
+			//get_links(get, line);
 			ft_putendl(line);
+			get_links(get, line);
+			ft_strdel(&line);
+		}
 	}
 	return (1);
 }
