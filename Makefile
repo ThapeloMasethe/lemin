@@ -6,13 +6,13 @@
 #    By: tmasethe <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/08/26 11:56:18 by tmasethe          #+#    #+#              #
-#    Updated: 2018/09/17 10:44:36 by tmasethe         ###   ########.fr        #
+#    Updated: 2018/09/23 03:58:25 by tmasethe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME			=	lem-in
 
-FILES			=	lem-in.c check.c
+FILES			=	lem-in.c check.c find_path.c
 
 OBJ 			=	$(FILES:.c=.o)
 

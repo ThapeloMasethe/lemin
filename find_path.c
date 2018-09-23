@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lem-in.h                                           :+:      :+:    :+:   */
+/*   find_path.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tmasethe <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/09/07 10:09:20 by tmasethe          #+#    #+#             */
-/*   Updated: 2018/09/23 03:56:59 by tmasethe         ###   ########.fr       */
+/*   Created: 2018/09/23 03:19:59 by tmasethe          #+#    #+#             */
+/*   Updated: 2018/09/23 04:08:41 by tmasethe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEMIN_H
-#define LEMIN_H
+#include "lem-in.h"
 
-# include <fcntl.h>
-# include	"libft/libft.h"
-
-typedef struct	s_room
+void	find_path(t_lemin *find)
 {
-	char		*name;
-	char		**links;
-}				t_room;
+	int i;
+	char **temp;
+	char *hold;
 
-typedef	struct	s_lemin
-{
-	int			ants;
-	int			occupied;
-	int			visited;
-	t_room		start;
-	t_room		end;
-	t_room		rooms;
-}				t_lemin;
-
-int				get_edges(t_lemin *get, int fd);
-int				check_ants(t_lemin *check, int fd);
-void			find_path(t_lemin *find);
-
-#endif
+	i = 0;
+	find->occupied = 0;
+	while (find->rooms.links[i])
+	{
+		temp = ft_strsplit(find->rooms.links[i], '-');
+		if (!ft_strcmp(temp[0], find->start.name))
+		{
+			ft_putstr("L1-");
+			ft_putstr(temp[1]);
+		}
+		hold = temp[1];
+		i++;
+	}
+}
