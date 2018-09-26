@@ -27,6 +27,7 @@ typedef	struct	s_lemin
 	int			ants;
 	int			occupied;
 	int			visited;
+	char		**path;
 	t_room		start;
 	t_room		end;
 	t_room		rooms;
