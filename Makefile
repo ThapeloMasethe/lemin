@@ -12,7 +12,7 @@
 
 NAME			=	lem-in
 
-FILES			=	lem-in.c check.c find_path.c
+FILES			=	lem-in.c check.c get_data.c find_path.c
 
 OBJ 			=	$(FILES:.c=.o)
 

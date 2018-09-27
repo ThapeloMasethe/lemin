@@ -29,7 +29,10 @@ int		main(int argc, char **argv)
 		ft_putendl("ERROR");
 		return (0);
 	}
-	ft_putendl("");
+	find_path(&lemin);
+	if (!lemin.exist)
+		return (0);
+	/* ft_putendl("");
 	ft_putendl("THE LINKS: ");
 	int i = 0;
 	while (lemin.rooms.links[i])
@@ -44,5 +47,12 @@ int		main(int argc, char **argv)
 	ft_putendl(lemin.end.name);
 	ft_putendl("");
 	find_path(&lemin);
+	if (!lemin.exist)
+		return (0);
+	ft_putendl(" Trying to move: "); */
+	find_path(&lemin);
+	if (!lemin.exist)
+		return (0);
+	move(&lemin);
 	return (0);
 }

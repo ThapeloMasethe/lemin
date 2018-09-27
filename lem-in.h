@@ -25,6 +25,7 @@ typedef struct	s_room
 typedef	struct	s_lemin
 {
 	int			ants;
+	int			exist;
 	int			occupied;
 	int			visited;
 	char		**path;
@@ -36,5 +37,6 @@ typedef	struct	s_lemin
 int				get_edges(t_lemin *get, int fd);
 int				check_ants(t_lemin *check, int fd);
 void			find_path(t_lemin *find);
+void			move(t_lemin *move);
 
 #endif
